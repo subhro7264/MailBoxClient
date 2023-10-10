@@ -159,7 +159,7 @@ const SideBar = () => {
               {isLoggedIn && (
                 <Nav.Link
                   as={NavLink}
-                  to="/send"
+                  to="/sent"
                   style={{ marginLeft: "0.8rem" }}
                 >
                   <span>
