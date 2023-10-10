@@ -7,7 +7,7 @@ import {NavLink } from "react-router-dom";
 // import {addItemToEmail} from '../../store/inbox-slice';
 import { Nav } from "react-bootstrap";
 
-const Inbox = () => {
+const Sent = () => {
   const email = useSelector((state) => state.inbox.emails);
   // const emails=localStorage.getItem('endpoint')
   const dispatch = useDispatch();
@@ -27,50 +27,6 @@ const Inbox = () => {
 
 
 
-//   /*-------------------------> GET DATA <------------------------- */
-//   const getData =useCallback( async () => {
-//     try {
-//       const response = await fetch(`https://email-box-client-c4aef-default-rtdb.firebaseio.com/${emails}/emails.json`, {
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//       });
-
-//       if (!response.ok) {
-//         throw new Error('Failed to fetch data');
-//       }
-
-//       const data = await response.json();
-
-//       if (data) {
-//         // Convert the Firebase response into an array
-//         const emailArray = Object.keys(data).map((key) => ({
-//           id: key,
-//           ...data[key],
-//         }));
-// console.log('email from get ',emailArray )
-// emailArray.map((emails)=>
-// dispatch(addItemToEmail({   key:emails.id ,id:emails.id , subject:emails.subject, toEmail:emails.toEmail,message:emails.message })))
-        
-//       }
-//     } catch (error) {
-//       console.error('Error fetching data:', error);
-//     }
-//   },[dispatch,emails])
-
-//   useEffect(() => {
-//     getData();
-//   },[]);
-
-
-
-
-
-
-
-
-
-
 
 // /*--------------------------------> Delete Data from BackEnd<------------------------------------------ */
 const deleteHandler =(id)=>{
@@ -78,29 +34,6 @@ const deleteHandler =(id)=>{
 }
 
 
-  // const deleteHandler = async (id) => {
-
-  //   dispatch(removeItemFromEmail(id));
-  
-  //   try {
-
-  //     const url = `https://email-box-client-c4aef-default-rtdb.firebaseio.com/${emails}/emails/${id}.json`;
-  
-  //     const response = await fetch(url, {
-  //       method: 'DELETE', 
-  //     });
-  
-  //     if (!response.ok) {
-
-  //       throw new Error(`Error deleting item with id ${id}`);
-  //     }
-  
-      
-  //     console.log(`Item with id ${id} deleted successfully`);
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
 
   return (
     <Fragment>
@@ -137,6 +70,6 @@ const deleteHandler =(id)=>{
   );
 };
 
-export default React.memo(Inbox);
+export default Sent;
 
 
